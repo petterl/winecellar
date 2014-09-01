@@ -1,0 +1,31 @@
+<head>
+  <title>winecellar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <h1>Welcome to the cellar!</h1>
+
+  {{> winelist}}
+</body>
+
+<template name="winelist">
+	<div class="winelist">
+		{{#each wines}}
+			{{> wine}}
+		{{/each}}
+	</div>
+</template>
+
+<template name="wine">
+	<div class="wine {{selected}}">
+		<span class="image"><img src="{{image}}" height='70'/></span>
+		<span class="vineyard">{{vineyard}}</span>
+		<span class="name">{{name}}</span>
+		<span class="country">{{country}}</span>
+		<span class="vintage">{{vintage}}</span>
+		<span class="comments">{{comments}}</span>
+		<span class="rating">{{rating}}</span>
+		
+	</div>
+</template>
